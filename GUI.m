@@ -23,7 +23,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 13-Apr-2017 13:13:11
+% Last Modified by GUIDE v2.5 13-Apr-2017 14:18:20
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -50,6 +50,7 @@ end
 function GUI_OpeningFcn(hObject, eventdata, handles, varargin)
 global five
 five = 5;
+ set(handles.text15, 'Visible','off');
 %Sometimes the code would have it so the fields do not start at 0 , I'm not
 %certain if this fixes that but further testing will show.
 global kx
@@ -87,7 +88,7 @@ set(handles.uipanel5, 'Visible','off');
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to GUI (see VARARGIN)
 global fullpathname
-disp(fullpathname)
+%disp(fullpathname)
 
 % Choose default command line output for GUI
 
@@ -139,12 +140,14 @@ function pushbutton28_Callback(hObject, eventdata, handles)
 handles.output = hObject;
 [filename pathname] = uigetfile({'*.png;,*.jpeg;'},'File Selector');
 global fullpathname;
+global flagCanRun;
 
 
 fullpathname = strcat(pathname,filename);
 set(handles.text3,'String',fullpathname);
 if(isempty(fullpathname)==0)
     set(handles.text12, 'Visible','off');
+    flagCanRun=1;
 end
     
 %I just set the initial display for the folder path to be "Nothing Loaded"
@@ -176,13 +179,59 @@ function pushbutton9_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in pushbutton10.
 function pushbutton10_Callback(hObject, eventdata, handles)
+  
 % hObject    handle to pushbutton10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+global flagCanRun;
+ runFlag=0
  text='Run Pressed';%Hard to change text inside the synthetic_holography function since it doesn't take "handles"
  set(handles.textStatus,'String',text);
-synthetic_holography();
-
+ 
+ string1=get(handles.edit1,'String')
+ numstring1=str2num(string1)
+ if( isempty(numstring1)) %This handles both empty and words in text box
+     runFlag=1
+ end
+ 
+ string2=get(handles.edit2,'String')
+ numstring2=str2num(string2)
+ if( isempty(numstring2)) %This handles both empty and words in text box
+     runFlag=1
+ end
+ 
+  string3=get(handles.edit3,'String')
+ numstring3=str2num(string3)
+ if( isempty(numstring3)) %This handles both empty and words in text box
+     runFlag=1
+ end
+  
+ string4=get(handles.edit4,'String')
+ numstring4=str2num(string4)
+ if( isempty(numstring4)) %This handles both empty and words in text box
+     runFlag=1
+ end
+ 
+  string5=get(handles.edit5,'String')
+ numstring5=str2num(string5)
+ if( isempty(numstring5)) %This handles both empty and words in text box
+     runFlag=1
+ end
+ 
+   string6=get(handles.edit6,'String')
+ numstring6=str2num(string6)
+ if( isempty(numstring6)) %This handles both empty and words in text box
+     runFlag=1
+ end
+ 
+if(runFlag==0 &  flagCanRun==1)
+     set(handles.text15, 'Visible','off');
+    synthetic_holography();
+end
+if(runFlag)
+    set(handles.text15, 'Visible','on');
+end
+    
 
 % --- Executes on button press in pushbutton11.
 function pushbutton11_Callback(hObject, eventdata, handles)
@@ -628,17 +677,18 @@ phasekx = editKx; %...
 phaseky = editKy;          %...
 phase_offset=editPhase;       %...
 j2 = editJ2;              %...
-disp(editKx)
-disp(kx)
-disp(ky)
-disp(phasekx)
-disp(phaseky)
-disp(phase_offset)
-disp(j2)
+%disp(editKx)
+%disp(kx)
+%disp(ky)
+%disp(phasekx)
+%disp(phaseky)
+%disp(phase_offset)
+%disp(j2)
 
 
 %% Read image
 global fullpathname
+global flagLoaded
 if( isempty(fullpathname)==1)
     %By default use the holo.png image.... if we're sending this out to a
     %client it should probably be something along the lines of "NO IMAGE
@@ -658,7 +708,7 @@ else
     holo = double(image);
     
     end
-disp(fullpathname)
+%disp(fullpathname)
 end
 
 
