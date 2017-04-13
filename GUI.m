@@ -1,4 +1,7 @@
 function varargout = GUI(varargin)
+%Change it so that you have the option to only open up some of the figures.
+%Change the variables so that it makes sense (Phase KX and Kx)
+
 %Look at the comments on my laptop and take out the "Science" part.
 % GUI MATLAB code for GUI.fig
 %      GUI, by itself, creates a new GUI or raises the existings
