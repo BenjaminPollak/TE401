@@ -1,0 +1,131 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="656058305" file="\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\TE_401_UI\Schnell.prj" location="\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\TE_401_UI" name="Schnell" preferred-package-location="\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\TE_401_UI\Schnell\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>Schnell</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.0</param.version>
+    <param.authnamewatermark>P Scott Carney, Martin Schnell, etc.</param.authnamewatermark>
+    <param.email>zwass@comcast.net</param.email>
+    <param.company>Schnell Optics</param.company>
+    <param.summary>Summary here</param.summary>
+    <param.description>Description here</param.description>
+    <param.screenshot />
+    <param.guid />
+    <param.installpath.string>\Schnell Optics\Schnell\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\Schnell\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\Schnell\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\Schnell\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\Schnell</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.version />
+      <param.screenshot />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.target.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.logdir />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.embed.ctf />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\GUI.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\Photoshop\F.jpg</file>
+      <file>\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\Photoshop\MightyUlm2.jpg</file>
+      <file>\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\Photoshop\Run.jpg</file>
+      <file>\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\Photoshop\Scan.jpg</file>
+      <file>\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\Photoshop\Smile.jpg</file>
+    </fileset.resources>
+    <fileset.package />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\GUI.fig</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\Schnell\for_testing" name="Schnell.exe" optional="false">\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\TE_401_UI\Schnell\for_testing\Schnell.exe</file>
+      <file location="${PROJECT_ROOT}\Schnell\for_testing" name="splash.png" optional="false">\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\TE_401_UI\Schnell\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\Schnell\for_testing" name="readme.txt" optional="true">\\ad.uillinois.edu\engr\instructional\zwasser2\Desktop\TE_401_UI\Schnell\for_testing\readme.txt</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2016a</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabcoder" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="embeddedcoder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.1</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
